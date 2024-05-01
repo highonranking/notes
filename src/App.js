@@ -29,12 +29,12 @@ function App() {
           type="text"
           value={note}
           onChange={(e) => setNote(e.target.value)}
-          className="px-4 py-2 mr-2 bg-gray-800 border border-gray-600 rounded-md focus:outline-none focus:border-blue-500 text-gray-100"
+          className="px-4 py-2 mr-2 bg-gray-800 border border-red-300 rounded-md focus:outline-none focus:border-blue-500 text-gray-100"
           placeholder="Write..."
         />
         <button
           onClick={addNote}
-          className="inline-block  text-white uppercase text-4xl border-7 border-red-600 font-roboto tracking-widest transition-all duration-500 font-light hover:font-bold hover:tracking-widest hover:border-12 hover:border-red-600"
+          className="inline-block  text-red-300 uppercase text-4xl border-7 border-red-600 font-roboto tracking-widest transition-all duration-500 font-light hover:font-bold hover:tracking-widest hover:border-12 hover:border-red-600"
         >
           +
         </button>

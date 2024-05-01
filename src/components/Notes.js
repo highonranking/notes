@@ -96,12 +96,18 @@ const Notes = ({notes = [], setNotes = () => {}}) => {
     setNotes(updatedNotes);
     localStorage.setItem("notes", JSON.stringify(updatedNotes));
   };
+  const deleteNote = (id) => {
+    const updatedNotes = notes.filter((note) => note.id !== id);
+    setNotes(updatedNotes);
+    localStorage.setItem("notes", JSON.stringify(updatedNotes));
+  };
+  
 
   return (
     <div>
       {notes.map((note) => {
         return (
-          <Note
+            <Note
             key={note.id}
             ref={
               noteRefs.current[note.id]
@@ -110,8 +116,10 @@ const Notes = ({notes = [], setNotes = () => {}}) => {
             }
             initialPos={note.position}
             content={note.text}
+            onDelete={() => deleteNote(note.id)}
             onMouseDown={(e) => handleDragStart(note, e)}
           />
+          
         );
       })}
     </div>
